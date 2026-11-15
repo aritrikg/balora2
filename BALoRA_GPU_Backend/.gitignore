@@ -1,0 +1,6 @@
+local_models/
+.venv/
+__pycache__/
+*.nii
+*.nii.gz
+*.pt

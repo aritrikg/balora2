@@ -1,0 +1,10 @@
+{
+  "archive_sha256": "ccc8581ea2b5dfac4909056585448a9121f6e1d2a122352f6039d5680c185340",
+  "backbone_sha256": "a2345aede8715ab1d5d31b4a509fb160c5a4af1970f199d9054ccfb746c004c5",
+  "sam2_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+  "weight_sha256": {
+    "balora": "cb0d82ca0b01cb4328ef6afa1c54e246c42093c3320efd519b931063398da0ec",
+    "deterministic": "40ff778fe706fda8ebac4ad9b5bd5215a2c1e6b89674f654016b22a54dff70d8"
+  },
+  "archive_prefix": "balora_full_run_fold1_seed42_v4"
+}

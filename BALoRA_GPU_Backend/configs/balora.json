@@ -1,0 +1,60 @@
+{
+  "sam2": {
+    "checkpoint_sha256": "a2345aede8715ab1d5d31b4a509fb160c5a4af1970f199d9054ccfb746c004c5",
+    "freeze_backbone": true,
+    "git_ref": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+    "model_cfg": "configs/sam2.1/sam2.1_hiera_b+.yaml",
+    "repo": "https://github.com/facebookresearch/sam2.git",
+    "resolved_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4"
+  },
+  "training": {
+    "amp": true,
+    "batch_size": 1,
+    "checkpoint_every": 5,
+    "checkpoint_seconds": 300,
+    "early_stopping_patience": 6,
+    "grad_clip_norm": 1.0,
+    "lr": 0.0001,
+    "min_epochs": 8,
+    "num_epochs": 20,
+    "num_workers": 0,
+    "val_every": 1,
+    "weight_decay": 1e-05
+  },
+  "lora": {
+    "alpha": 16.0,
+    "attribution_gamma": 4.0,
+    "dropout": 0.05,
+    "encoder_target_modules": [
+      "attn.qkv",
+      "attn.proj",
+      "mlp.layers.0",
+      "mlp.layers.1"
+    ],
+    "learned_prior_weight": 0.2,
+    "rank_bank": [
+      4,
+      8,
+      16
+    ],
+    "target_modules": [
+      "transformer.layers.",
+      "transformer.final_attn_token_to_image."
+    ]
+  },
+  "bayesian": {
+    "enabled": true,
+    "encoder_scope": "point_estimate_lora",
+    "init_posterior_std": 0.05,
+    "k_infer": 4,
+    "k_train": 2,
+    "posterior_scope": "sam_mask_decoder_only",
+    "prior_std": 1.0
+  },
+  "runtime": {
+    "encoder_checkpointing": "per_block",
+    "evaluation_pause_reason": "SESSION_LIMIT_PAUSED",
+    "training_deadline_unix": 1793563948.5533886,
+    "training_pause_reason": "SESSION_LIMIT_PAUSED"
+  }
+}
